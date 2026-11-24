@@ -1,20 +1,16 @@
+//evento que se ejecuta cada vez que se carga la pagina
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Verificar que exista la sesión en sessionStorage
+    //Verificar que exista la sesión en sessionStorage
     const datosGuardados = sessionStorage.getItem("usuarioERP");
 
-    if (!datosGuardados) {
-        // Si no ha iniciado sesión, regresarlo a index.html
-        window.location.href = "index.html";
-        return;
-    }
-
-    // 2. Convertir el JSON guardado a objeto JavaScript
+    //Convertir el JSON guardado a objeto JavaScript
     const usuario = JSON.parse(datosGuardados);
 
     mostrarFechaActual();
     mostrarSaludo(usuario);
 });
 
+//funcion que imprime en pantalla la fecha actual del sistema
 function mostrarFechaActual() {
     const opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
     const hoy = new Date().toLocaleDateString("es-MX", opciones);
@@ -22,6 +18,7 @@ function mostrarFechaActual() {
     document.getElementById("fechaActual").textContent = hoy.charAt(0).toUpperCase() + hoy.slice(1);
 }
 
+//funcion que imprime un saludo al usuario despues de iniciar sesion
 function mostrarSaludo(usuario) {
     const nombreCompleto = usuario.nombreCompleto || "Usuario";
     document.getElementById("saludoNombre").textContent = nombreCompleto.split(" ")[0];

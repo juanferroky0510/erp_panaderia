@@ -1,3 +1,4 @@
+//se guarda en una variable el endpoint de nuestro servidor para validar el usuario
 const API_LOGIN_URL = "http://127.0.0.1:5000/api/auth/login";
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,18 +1,17 @@
+//se guarda en una variable el endpoint de nuestro servidor para hacer peticiones al controlador de proveedores
 const API_BASE_PROVEEDORES = "http://127.0.0.1:5000/api/proveedores";
 
 // Variables globales de estado
 let usuarioActual = null;
 let listaProveedores = [];
 let paginaActual = 1;
+//variable que sirve para la paginacion de registros en las tablas
 const REGISTROS_POR_PAGINA = 5;
 
+//evento que se ejecuta cada vez que se carga la pagina
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Verificar sesión activa en sessionStorage
+    //Verificar sesión activa en sessionStorage
     const datosGuardados = sessionStorage.getItem("usuarioERP");
-    if (!datosGuardados) {
-        window.location.href = "index.html";
-        return;
-    }
 
     usuarioActual = JSON.parse(datosGuardados);
 
@@ -25,15 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // 3. Cargar tabla inicial con todos los proveedores (Todos por defecto)
+    //Cargar tabla inicial con todos los proveedores (Todos por defecto)
     cargarProveedores();
 
-    // 4. Eventos del formulario
+    //Eventos del formulario
     document.getElementById("btnInsertar").addEventListener("click", insertarProveedor);
     document.getElementById("btnActualizar").addEventListener("click", actualizarProveedor);
     document.getElementById("btnLimpiar").addEventListener("click", resetearFormulario);
 
-    // 5. Eventos de búsqueda y filtro
+    //Eventos de búsqueda y filtro
     document.getElementById("cmbFiltroEstado").addEventListener("change", () => {
         document.getElementById("txtBuscar").value = "";
         cargarProveedores();
