@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA ERP | Inicio</title>
+    <link rel="icon" type="image/png" href="assets/imagenes/icon.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Estilos NEXORA -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <div class="d-flex">
+        <!-- BARRA LATERAL (Escritorio) -->
+        <aside class="sidebar d-none d-lg-flex">
+            <div class="sidebar-header d-flex align-items-center gap-2">
+                <img src="assets/imagenes/icon.png" alt="Logo NEXORA" width="38" height="38"
+                    style="object-fit: contain;">
+                <span class="brand-title fs-5 fw-bold text-white ms-1">NEXORA</span>
+                <span class="badge-erp ms-1">ERP</span>
+            </div>
+
+            <!-- Menú con los 5 módulos solicitados -->
+            <nav class="sidebar-nav">
+                <a href="inicio.html" class="sidebar-link active">
+                    <i class="bi bi-house-door"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="inventario.html" class="sidebar-link modulo-inventario d-none">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="produccion.html" class="sidebar-link modulo-produccion d-none">
+                    <i class="bi bi-gear-wide-connected"></i>
+                    <span>Producción</span>
+                </a>
+                <a href="capital_humano.html" class="sidebar-link modulo-capitalhumano d-none">
+                    <i class="bi bi-people"></i>
+                    <span>Capital Humano</span>
+                </a>
+                <a href="kardex.html" class="sidebar-link modulo-kardex d-none">
+                    <i class="bi bi-journals"></i>
+                    <span>Kardex</span>
+                </a>
+                <a href="asistencias.html" class="sidebar-link modulo-asistencias d-none">
+                    <i class="bi bi-stopwatch"></i>
+                    <span>Asistencias</span>
+                </a>
+                <a href="proveedores.html" class="sidebar-link modulo-proveedor d-none">
+                    <i class="bi bi-truck"></i>
+                    <span>Proveedores</span>
+                </a>
+            </nav>
+
+            <!-- Botón Cerrar Sesión -->
+            <div class="sidebar-footer">
+                <button type="button" class="btn-logout btnCerrarSesion">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- BARRA LATERAL MÓVIL (Offcanvas Bootstrap) -->
+        <div class="offcanvas offcanvas-start text-white" tabindex="-1" id="menuMovil"
+            style="background-color: var(--nexora-navy); width: 265px;">
+            <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="assets/imagenes/icon.png" alt="Logo NEXORA" width="38" height="38"
+                        style="object-fit: contain;">
+                    <span class="brand-title fs-5 fw-bold">NEXORA</span>
+                    <span class="badge-erp">ERP</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column p-0">
+                <nav class="sidebar-nav">
+                    <a href="inicio.html" class="sidebar-link active">
+                        <i class="bi bi-house-door"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="inventario.html" class="sidebar-link modulo-inventario d-none">
+                        <i class="bi bi-box-seam"></i>
+                        <span>Inventario</span>
+                    </a>
+                    <a href="produccion.html" class="sidebar-link modulo-produccion d-none">
+                        <i class="bi bi-gear-wide-connected"></i>
+                        <span>Producción</span>
+                    </a>
+                    <a href="capital_humano.html" class="sidebar-link modulo-capitalhumano d-none">
+                        <i class="bi bi-people"></i>
+                        <span>Capital Humano</span>
+                    </a>
+                    <a href="kardex.html" class="sidebar-link modulo-kardex d-none">
+                        <i class="bi bi-journals"></i>
+                        <span>Kardex</span>
+                    </a>
+                    <a href="asistencias.html" class="sidebar-link modulo-asistencias d-none">
+                        <i class="bi bi-stopwatch"></i>
+                        <span>Asistencias</span>
+                    </a>
+                    <a href="proveedores.html" class="sidebar-link modulo-proveedor d-none">
+                        <i class="bi bi-truck"></i>
+                        <span>Proveedores</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button type="button" class="btn-logout btnCerrarSesion">
+                        <i class="bi bi-box-arrow-left"></i>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="flex-grow-1 d-flex flex-column min-vh-100">
+            <!-- Barra Superior (Topbar) -->
+            <header class="topbar d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#menuMovil">
+                        <i class="bi bi-list fs-5"></i>
+                    </button>
+                    <div>
+                        <h1 class="h5 fw-bold mb-0" style="color: var(--nexora-navy);">Panel Principal</h1>
+                        <small class="text-muted" id="fechaActual"></small>
+                    </div>
+                </div>
+
+                <!-- Información del usuario logueado desde sessionStorage -->
+                <div class="d-flex align-items-center gap-3">
+                    <div class="text-end d-none sm-block d-sm-block">
+                        <div class="fw-semibold small" id="lblNombreUsuario" style="color: var(--nexora-navy);">
+                            Cargando...</div>
+                        <div class="d-flex justify-content-end align-items-center gap-2">
+                            <span class="badge rounded-pill text-bg-light border" id="lblRolUsuario">Rol</span>
+                            <small class="text-muted" id="lblTurnoUsuario">Turno</small>
+                        </div>
+                    </div>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                        id="avatarIniciales" style="width: 42px; height: 42px; background-color: var(--nexora-navy);">
+                        US
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cuerpo de la página -->
+            <main class="p-4 p-md-5 flex-grow-1">
+                <!-- Banner de bienvenida al usuario -->
+                <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden">
+                    <div class="card-body p-4 p-md-5 text-white"
+                        style="background: linear-gradient(135deg, var(--nexora-navy) 0%, #1d3f6b 100%);">
+                        <span class="badge-erp mb-2 d-inline-block">SESIÓN ACTIVA</span>
+                        <h2 class="h3 fw-bold mb-2">¡Hola, <span id="saludoNombre">Usuario</span>!</h2>
+                        <p class="text-white-50 mb-0" style="max-width: 650px;">
+                            Selecciona uno de los módulos operativos de <strong>NEXORA ERP</strong> para comenzar a
+                            gestionar las operaciones de la panadería.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de acceso directo a los módulos -->
+                <h3 class="h6 text-uppercase fw-bold text-muted mb-3">Módulos del Sistema</h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-3 modulo-inventario d-none">
+                        <a href="inventario.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Inventario</h4>
+                            <p class="text-muted small mb-0">
+                                Control de insumos, existencias por lotes FEFO, fechas de caducidad y registro de
+                                mermas.
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 modulo-produccion d-none">
+                        <a href="produccion.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-gear-wide-connected"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Producción</h4>
+                            <p class="text-muted small mb-0">
+                                Administración de recetas (BOM), costeo por lote y seguimiento de órdenes de horneado.
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 modulo-capitalhumano d-none">
+                        <a href="capital_humano.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Capital Humano</h4>
+                            <p class="text-muted small mb-0">
+                                Gestión de empleados, puestos, asignación de turnos y control de asistencias.
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 modulo-proveedor d-none">
+                        <a href="proveedores.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Proveedores</h4>
+                            <p class="text-muted small mb-0">
+                                Catálogo de proveedores y tiempos de entrega.
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 modulo-kardex d-none">
+                        <a href="kardex.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-journals"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Kardex</h4>
+                            <p class="text-muted small mb-0">
+                                Reporte de todos los movimientos hechos en el inventario.
+                            </p>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 modulo-asistencias d-none">
+                        <a href="asistencias.html" class="module-card">
+                            <div class="module-icon">
+                                <i class="bi bi-stopwatch"></i>
+                            </div>
+                            <h4 class="h5 fw-bold mb-2" style="color: var(--nexora-navy);">Asistencias</h4>
+                            <p class="text-muted small mb-0">
+                                Registrar asistencia.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lógica vinculada a inicio.html -->
+    <script src="assets/js/general.js"></script>
+    <script src="assets/js/inicio.js"></script>
+</body>
+
+</html>
