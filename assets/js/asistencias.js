@@ -21,14 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarReloj();
     setInterval(actualizarReloj, 1000);
 
-    // 5. Configurar cierre de sesión
-    document.querySelectorAll(".btnCerrarSesion").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            sessionStorage.removeItem("usuarioERP");
-            window.location.href = "index.html";
-        });
-    });
-
     // 6. Contador de caracteres para observaciones (máx. 100 en BD)
     const txtObservaciones = document.getElementById("txtObservaciones");
     txtObservaciones.addEventListener("input", () => {
