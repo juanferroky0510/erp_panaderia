@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA ERP | Asistencias</title>
+    <link rel="icon" type="image/png" href="assets/imagenes/icon.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Estilos NEXORA -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <div class="d-flex">
+        <!-- BARRA LATERAL (Escritorio) -->
+        <aside class="sidebar d-none d-lg-flex">
+            <div class="sidebar-header d-flex align-items-center gap-2">
+                <img src="assets/imagenes/icon.png" alt="Logo NEXORA" width="38" height="38"
+                    style="object-fit: contain;">
+                <span class="brand-title fs-5 fw-bold text-white ms-1">NEXORA</span>
+                <span class="badge-erp ms-1">ERP</span>
+            </div>
+
+            <!-- Menú con los 5 módulos solicitados -->
+            <nav class="sidebar-nav">
+                <a href="inicio.html" class="sidebar-link">
+                    <i class="bi bi-house-door"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="inventario.html" class="sidebar-link modulo-inventario d-none">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Inventario</span>
+                </a>
+                <a href="produccion.html" class="sidebar-link modulo-produccion d-none">
+                    <i class="bi bi-gear-wide-connected"></i>
+                    <span>Producción</span>
+                </a>
+                <a href="capital_humano.html" class="sidebar-link modulo-capitalhumano d-none">
+                    <i class="bi bi-people"></i>
+                    <span>Capital Humano</span>
+                </a>
+                <a href="kardex.html" class="sidebar-link modulo-kardex d-none">
+                    <i class="bi bi-journals"></i>
+                    <span>Kardex</span>
+                </a>
+                <a href="asistencias.html" class="sidebar-link modulo-asistencias d-none active">
+                    <i class="bi bi-stopwatch"></i>
+                    <span>Asistencias</span>
+                </a>
+                <a href="proveedores.html" class="sidebar-link modulo-proveedor d-none">
+                    <i class="bi bi-truck"></i>
+                    <span>Proveedores</span>
+                </a>
+            </nav>
+
+            <!-- Botón Cerrar Sesión -->
+            <div class="sidebar-footer">
+                <button type="button" class="btn-logout btnCerrarSesion">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- BARRA LATERAL MÓVIL (Offcanvas Bootstrap) -->
+        <div class="offcanvas offcanvas-start text-white" tabindex="-1" id="menuMovil"
+            style="background-color: var(--nexora-navy); width: 265px;">
+            <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="assets/imagenes/icon.png" alt="Logo NEXORA" width="38" height="38"
+                        style="object-fit: contain;">
+                    <span class="brand-title fs-5 fw-bold">NEXORA</span>
+                    <span class="badge-erp">ERP</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column p-0">
+                <nav class="sidebar-nav">
+                    <a href="inicio.html" class="sidebar-link">
+                        <i class="bi bi-house-door"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="inventario.html" class="sidebar-link modulo-inventario d-none">
+                        <i class="bi bi-box-seam"></i>
+                        <span>Inventario</span>
+                    </a>
+                    <a href="produccion.html" class="sidebar-link modulo-produccion d-none">
+                        <i class="bi bi-gear-wide-connected"></i>
+                        <span>Producción</span>
+                    </a>
+                    <a href="capital_humano.html" class="sidebar-link modulo-capitalhumano d-none">
+                        <i class="bi bi-people"></i>
+                        <span>Capital Humano</span>
+                    </a>
+                    <a href="kardex.html" class="sidebar-link modulo-kardex d-none">
+                        <i class="bi bi-journals"></i>
+                        <span>Kardex</span>
+                    </a>
+                    <a href="asistencias.html" class="sidebar-link modulo-asistencias d-none active">
+                        <i class="bi bi-stopwatch"></i>
+                        <span>Asistencias</span>
+                    </a>
+                    <a href="proveedores.html" class="sidebar-link modulo-proveedor d-none">
+                        <i class="bi bi-truck"></i>
+                        <span>Proveedores</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button type="button" class="btn-logout btnCerrarSesion">
+                        <i class="bi bi-box-arrow-left"></i>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="flex-grow-1 d-flex flex-column min-vh-100">
+            <!-- Barra Superior -->
+            <header class="topbar d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMovil">
+                        <i class="bi bi-list fs-5"></i>
+                    </button>
+                    <div>
+                        <h1 class="h5 fw-bold mb-0" style="color: var(--nexora-navy);">Control de Asistencia</h1>
+                        <small class="text-muted">Registro diario de entrada y salida de turno</small>
+                    </div>
+                </div>
+
+                <!-- Usuario activo -->
+                <div class="d-flex align-items-center gap-3">
+                    <div class="text-end d-none d-sm-block">
+                        <div class="fw-semibold small" id="lblNombreUsuario" style="color: var(--nexora-navy);">Cargando...</div>
+                        <div class="d-flex justify-content-end align-items-center gap-2">
+                            <span class="badge rounded-pill text-bg-light border" id="lblRolUsuario">Rol</span>
+                            <small class="text-muted" id="lblTurnoUsuario">Turno</small>
+                        </div>
+                    </div>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold"
+                         id="avatarIniciales"
+                         style="width: 42px; height: 42px; background-color: var(--nexora-navy);">
+                        US
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cuerpo del Módulo -->
+            <main class="p-4 flex-grow-1 d-flex align-items-start justify-content-center">
+                <div class="container" style="max-width: 760px;">
+
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <!-- Cabecera con Reloj en Vivo -->
+                        <div class="card-header border-0 p-4 text-white d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3"
+                             style="background: linear-gradient(135deg, var(--nexora-navy) 0%, #1d3f6b 100%);">
+                            <div>
+                                <span class="badge-erp mb-2 d-inline-block">RELOJ CHECADOR</span>
+                                <h2 class="h4 fw-bold mb-1" id="lblEmpleadoCard">Empleado</h2>
+                                <p class="text-white-50 small mb-0" id="lblInfoPuestoTurno">Puesto • Turno</p>
+                            </div>
+                            <div class="text-sm-end bg-white bg-opacity-10 rounded-3 px-3 py-2">
+                                <div class="fs-3 fw-bold font-monospace lh-1 mb-1" id="relojVivo">--:--:--</div>
+                                <small class="text-white-50" id="fechaViva">Cargando fecha...</small>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-4 p-md-5">
+                            <!-- Alerta de respuesta de la API -->
+                            <div id="alertaAsistencia" class="alert d-none py-2 px-3 small mb-4" role="alert"></div>
+
+                            <!-- Estado Actual del Turno -->
+                            <div class="p-3 rounded-3 bg-light border mb-4">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                                    <span class="small fw-semibold text-uppercase text-muted">Estado actual de jornada</span>
+                                    <span id="badgeEstadoAsistencia" class="badge rounded-pill text-bg-secondary px-3 py-2">
+                                        Consultando...
+                                    </span>
+                                </div>
+
+                                <div class="row g-3 text-center">
+                                    <div class="col-4">
+                                        <div class="bg-white rounded-3 p-2 border">
+                                            <small class="text-muted d-block" style="font-size: 0.75rem;">Hora Entrada</small>
+                                            <span class="fw-bold small" id="lblHoraEntrada" style="color: var(--nexora-navy);">--:--</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="bg-white rounded-3 p-2 border">
+                                            <small class="text-muted d-block" style="font-size: 0.75rem;">Hora Salida</small>
+                                            <span class="fw-bold small" id="lblHoraSalida" style="color: var(--nexora-navy);">--:--</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="bg-white rounded-3 p-2 border">
+                                            <small class="text-muted d-block" style="font-size: 0.75rem;">Retardo / Horas</small>
+                                            <span class="fw-bold small" id="lblDetalleTiempo" style="color: var(--nexora-navy);">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Formulario de Registro de Asistencia -->
+                            <form id="formAsistencia" novalidate>
+                                <div class="mb-4">
+                                    <label for="txtObservaciones" class="form-label small fw-semibold" style="color: var(--nexora-navy);">
+                                        Observaciones o incidencias (Opcional)
+                                    </label>
+                                    <textarea
+                                        class="form-control"
+                                        id="txtObservaciones"
+                                        rows="2"
+                                        maxlength="100"
+                                        placeholder="Ej. Inicio de turno sin novedad / Apoyo en horneado..."
+                                    ></textarea>
+                                    <div class="d-flex justify-content-between form-text" style="font-size: 0.75rem;">
+                                        <span>1er registro = Entrada (TRABAJANDO) • 2do registro = Salida (FUERA DE SERVICIO)</span>
+                                        <span id="contadorCaracteres">0/100</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" id="btnRegistrarAsistencia" class="btn btn-nexora btn-lg py-3 fw-semibold" disabled>
+                                        <i class="bi bi-fingerprint me-2" id="iconoBtnAsistencia"></i>
+                                        <span id="textoBtnAsistencia">Verificando estado...</span>
+                                        <span id="spinnerAsistencia" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lógica vinculada a asistencias.html -->
+    <script src="assets/js/general.js"></script>
+    <script src="assets/js/asistencias.js"></script>
+</body>
+</html>
